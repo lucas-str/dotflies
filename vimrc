@@ -86,6 +86,10 @@ let g:vimwiki_list = [{'path': '~/.vimwiki/'}]
 " Remove delay when exiting visual mode
 set timeout timeoutlen=1000 ttimeoutlen=10
 
+" Zsh command completion style
+set wildmode=longest,list,full
+set wildmenu
+
 " == Fix Autoclose ==
 " Set timeoutlen to a lower value in insert mode so that pressing ESC
 " instantly gets in normal mode.
