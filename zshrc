@@ -65,7 +65,7 @@ export PATH=$HOME/bin:$PATH
 
 export EDITOR='vim'
 
-alias lx="ls --color=auto"
+alias ls="ls --color=auto"
 alias ll="ls -lArth"
 
 alias tmux="tmux -2"
