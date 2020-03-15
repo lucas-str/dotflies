@@ -50,7 +50,7 @@ bindkey -- "${terminfo[kcuu1]}" up-line-or-beginning-search
 bindkey -- "${terminfo[kcud1]}" down-line-or-beginning-search
 
 # Prompt
-local user='%F{magenta}%n@%%m%f'
+local user='%F{magenta}%n@%m%f'
 local pwd='%F{blue}%~%f'
 PROMPT="${user} ${pwd}$ "
 
