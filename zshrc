@@ -32,6 +32,7 @@ setopt SHARE_HISTORY
 
 # Vim style
 bindkey -v
+bindkey "^?" backward-delete-char
 
 # Completion
 autoload -Uz compinit
