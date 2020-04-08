@@ -24,6 +24,9 @@
 # My Minimal Zsh
 ###############################################################################
 
+# Interactive comments
+set -k
+
 # History
 HISTFILE=~/.histfile
 HISTSIZE=10000
