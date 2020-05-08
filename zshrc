@@ -30,7 +30,7 @@ set -k
 # History
 HISTFILE=~/.histfile
 HISTSIZE=10000
-SAVEHIST=1000
+SAVEHIST=10000
 setopt SHARE_HISTORY
 
 # Vim style
@@ -52,6 +52,8 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey -- "${terminfo[kcuu1]}" up-line-or-beginning-search
 bindkey -- "${terminfo[kcud1]}" down-line-or-beginning-search
+# Backward search
+bindkey '^R' history-incremental-search-backward
 
 # Make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
