@@ -86,4 +86,4 @@ alias ll="ls -lArth"
 
 alias tmux="tmux -2"
 
-export PATH="${PATH}:${HOME}/.local/bin/"
+export PATH="${PATH}:${HOME}/.local/bin/:/usr/local/go/bin"
