@@ -25,6 +25,7 @@ Plug 'majutsushi/tagbar'
 Plug 'chrisbra/csv.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-scripts/indentpython.vim'
+Plug 'lervag/vimtex'
 " Theme
 Plug 'morhetz/gruvbox'
 call plug#end()
