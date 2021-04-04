@@ -74,7 +74,7 @@ PROMPT="${user} ${pwd}$ "
 # Exports and aliases
 ###############################################################################
 
-export PATH=$HOME/bin:$PATH
+export PATH="${HOME}/bin:${HOME}/.local/bin:/usr/local/go/bin:${PATH}"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -85,5 +85,3 @@ alias ls="ls --color=auto"
 alias ll="ls -lArth"
 
 alias tmux="tmux -2"
-
-export PATH="${PATH}:${HOME}/.local/bin/:/usr/local/go/bin"
