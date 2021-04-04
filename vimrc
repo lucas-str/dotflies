@@ -21,6 +21,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
+Plug 'jiangmiao/auto-pairs'
 " Languages
 Plug 'chrisbra/csv.vim'
 Plug 'rust-lang/rust.vim'
