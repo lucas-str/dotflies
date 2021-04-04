@@ -60,7 +60,9 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 " Toggle number
+set relativenumber number
 nnoremap <Leader>n :set nonumber!<CR>
+nnoremap <Leader>r :set relativenumber!<CR>
 
 " Indent with 4 spaces
 set autoindent
