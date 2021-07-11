@@ -137,6 +137,10 @@ set updatetime=2000
 " Disable vim-markdown folding
 let g:vim_markdown_folding_disabled = 1
 
+" FZF
+nmap <Leader>f :Files<CR>
+nmap <Leader>b :Buffers<CR>
+
 " == Fix Autoclose ==
 " Set timeoutlen to a lower value in insert mode so that pressing ESC
 " instantly gets in normal mode.
