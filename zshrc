@@ -55,6 +55,15 @@ bindkey -- "${terminfo[kcud1]}" down-line-or-beginning-search
 # Backward search
 bindkey '^R' history-incremental-search-backward
 
+# Other key bindings
+bindkey -- "${terminfo[khome]}"   beginning-of-line
+bindkey -- "${terminfo[kend]}"    end-of-line
+bindkey -- "${terminfo[kich1]}"   overwrite-mode
+bindkey -- "${terminfo[kbs]}"     backward-delete-char
+bindkey -- "${terminfo[kdch1]}"   delete-char
+bindkey -- "${terminfo[kpp]}"     beginning-of-buffer-or-history
+bindkey -- "${terminfo[knp]}"     end-of-buffer-or-history
+
 # Make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
 if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
