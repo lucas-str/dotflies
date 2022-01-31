@@ -29,6 +29,9 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'lervag/vimtex'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'mfukar/robotframework-vim'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 " Theme
 Plug 'morhetz/gruvbox'
 call plug#end()
@@ -103,7 +106,7 @@ endif
 " Per file type preferences
 autocmd FileType {python,rust} setlocal textwidth=99 colorcolumn=100
 autocmd FileType {c,cpp} setlocal colorcolumn=80
-autocmd FileType {yaml,javascript,css} setlocal sw=2 ts=2
+autocmd FileType {yaml,javascript,css,json} setlocal sw=2 ts=2
 
 " Split to the right
 set splitright
@@ -136,12 +139,14 @@ let g:ale_lint_on_insert_leave = 0
 let g:ale_completion_enabled = 1
 let g:ale_cpp_flawfinder_minlevel = 3
 let g:ale_c_flawfinder_minlevel = 3
-let g:ale_python_pylint_executable = 'pylint3'
 let g:ale_python_mypy_options = '--ignore-missing-imports'
+let g:ale_python_autopep8_options = '-a'
+let g:ale_rust_cargo_use_clippy = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \    '*': ['trim_whitespace'],
 \    'go': ['gofmt', 'goimports'],
+\    'python': ['autopep8'],
 \}
 let g:ale_linters_ignore = {
 \    'c': ['clangd'],
@@ -182,7 +187,10 @@ let g:fzf_action = {
 " auto-pairs
 au FileType {c,cpp} let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})
 au FileType rust let b:AutoPairs = AutoPairsDefine({'\w\zs<': '>'})
-au FileType html let b:AutoPairs = AutoPairsDefine({'<!--' : '-->'}, ['{'])
+"au FileType html let b:AutoPairs = AutoPairsDefine({'<!--' : '-->'}, ['{'])
+au FileType html let b:AutoPairs = AutoPairsDefine({'<!--' : '-->', '{%':'%}'})
+au FileType htmldjango let b:AutoPairs = AutoPairsDefine({'{' : '}', '{%':'%}'})
+let g:AutoPairsCenterLine = 0
 
 " == Theme and colors ==
 
