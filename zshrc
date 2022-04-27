@@ -79,6 +79,10 @@ local user='%F{magenta}%n@%m%f'
 local pwd='%F{blue}%~%f'
 PROMPT="${user} ${pwd}$ "
 
+# Rigth prompt
+setopt PROMPT_SUBST
+RPROMPT='%F{green}$(git branch --show-current 2>/dev/null)%f'
+
 ###############################################################################
 # Exports and aliases
 ###############################################################################
