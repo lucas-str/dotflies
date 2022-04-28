@@ -26,6 +26,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'chrisbra/csv.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-scripts/indentpython.vim'
+Plug 'vim-python/python-syntax'
 Plug 'lervag/vimtex'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
@@ -150,6 +151,7 @@ let g:ale_fixers = {
 \}
 let g:ale_linters_ignore = {
 \    'c': ['clangd'],
+\    'python': ['pyright'],
 \}
 nmap gd :ALEGoToDefinition<CR>
 nmap gD :ALEGoToTypeDefinition<CR>
@@ -170,6 +172,10 @@ let g:fzf_action = {
 \    'ctrl-x': 'split',
 \    'ctrl-v': 'vsplit',
 \}
+
+" Configure python-syntax
+let g:python_highlight_space_errors = 1
+let g:python_highlight_all = 1
 
 " == Fix Autoclose ==
 " Set timeoutlen to a lower value in insert mode so that pressing ESC
