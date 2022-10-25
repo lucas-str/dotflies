@@ -34,7 +34,8 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'mfukar/robotframework-vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 " Theme
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
 " == Misc ==
@@ -139,11 +140,19 @@ let g:vim_markdown_folding_disabled = 1
 
 " == Theme and colors ==
 
+"set background=dark
+"let g:gruvbox_contrast_dark='hard'
+"colorscheme gruvbox
+"" No background color (terminal default color)
+"hi Normal ctermbg=NONE
+"hi Visual ctermfg=gray
+"hi ColorColumn ctermbg=gray
+""highlight LineNr ctermfg=Blue guifg=LightBlue
+
+if has('termguicolors')
+    set termguicolors
+endif
 set background=dark
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
-" No background color (terminal default color)
-hi Normal ctermbg=NONE
-hi Visual ctermfg=gray
-hi ColorColumn ctermbg=gray
-highlight LineNr ctermfg=Blue guifg=LightBlue
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_better_performance = 1
+colorscheme gruvbox-material
