@@ -22,11 +22,12 @@ Plug 'dense-analysis/ale'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
 " Languages
 Plug 'chrisbra/csv.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'vim-python/python-syntax'
+"Plug 'vim-python/python-syntax'
 Plug 'lervag/vimtex'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
