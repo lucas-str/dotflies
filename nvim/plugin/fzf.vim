@@ -7,3 +7,6 @@ let g:fzf_action = {
 \    'ctrl-x': 'split',
 \    'ctrl-v': 'vsplit',
 \}
+if executable('rg')
+    let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!{.git,tmpenv}/*" --glob "!tags" 2>/dev/null'
+endif
