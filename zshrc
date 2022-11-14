@@ -87,6 +87,10 @@ RPROMPT='%F{green}$(git branch --show-current 2>/dev/null)%f'
 # Exports and aliases
 ###############################################################################
 
+if type direnv > /dev/null; then
+    eval "$(direnv hook zsh)"
+fi
+
 export PATH="${HOME}/bin:${HOME}/.local/bin:/usr/local/go/bin:${PATH}"
 
 # You may need to manually set your language environment
@@ -94,7 +98,15 @@ export PATH="${HOME}/bin:${HOME}/.local/bin:/usr/local/go/bin:${PATH}"
 
 export EDITOR='vim'
 
-alias ls="ls --color=auto"
-alias ll="ls -lArth"
+if type exa > /dev/null; then
+    alias ls="exa"
+    alias ll="exa -las modified"
+    alias tree="exa -T"
+else
+    alias ls="ls --color=auto"
+    alias ll="ls -lArth"
+fi
 
 alias tmux="tmux -2"
+
+alias grep="grep --color=auto"
