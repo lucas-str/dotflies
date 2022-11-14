@@ -123,9 +123,6 @@ set updatetime=2000
 
 " == Plugins ==
 
-" Disable vim-markdown folding
-let g:vim_markdown_folding_disabled = 1
-
 " == Fix Autoclose ==
 " Set timeoutlen to a lower value in insert mode so that pressing ESC
 " instantly gets in normal mode.
