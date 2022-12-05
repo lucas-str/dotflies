@@ -11,7 +11,7 @@ call plug#begin('~/.vim/bundle')
 " Misc
 Plug 'ajh17/VimCompletesMe'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/nerdtree'
@@ -22,7 +22,8 @@ Plug 'dense-analysis/ale'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'tpope/vim-fugitive'
 " Languages
 Plug 'chrisbra/csv.vim'
 Plug 'rust-lang/rust.vim'
@@ -107,7 +108,7 @@ if has("autocmd")
 endif
 
 " Per file type preferences
-autocmd FileType {python,rust} setlocal textwidth=99 colorcolumn=100
+autocmd FileType {python,rust} setlocal colorcolumn=100
 autocmd FileType {c,cpp} setlocal colorcolumn=80
 autocmd FileType {yaml,javascript,css,json} setlocal sw=2 ts=2
 
