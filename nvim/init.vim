@@ -28,7 +28,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'chrisbra/csv.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-scripts/indentpython.vim'
-"Plug 'vim-python/python-syntax'
 Plug 'lervag/vimtex'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
@@ -36,7 +35,6 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'mfukar/robotframework-vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 " Theme
-"Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
@@ -70,10 +68,8 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
-" Toggle number
+" Relative line number
 set relativenumber number
-nnoremap <Leader>n :set nonumber!<CR>
-nnoremap <Leader>r :set relativenumber!<CR>
 
 " Indent with 4 spaces
 set autoindent
@@ -84,9 +80,6 @@ set scrolloff=4
 
 " Use system clipboard
 set clipboard=unnamed
-
-" Toggle highlight search
-noremap <Leader>h :set hlsearch!<CR>
 
 " Navigate properly when lines are wrapped
 noremap j gj
@@ -122,31 +115,7 @@ noremap <C-S-PageDown> :+tabmove<CR>
 " Accelerate Tagbar update
 set updatetime=2000
 
-" == Plugins ==
-
-" == Fix Autoclose ==
-" Set timeoutlen to a lower value in insert mode so that pressing ESC
-" instantly gets in normal mode.
-" Since vim-autoclose maps ESC in insert mode, it would take 1s to go back to
-" normal mode without this.
-":autocmd InsertEnter * set timeoutlen=10
-":autocmd InsertLeave * set timeoutlen=1000
-
-" Suppress easytags ctags warning (tmp fix)
-"let g:easytags_suppress_ctags_warning = 1
-" Easytags asynchronous mode
-"let g:easytags_async = 1
-
 " == Theme and colors ==
-
-"set background=dark
-"let g:gruvbox_contrast_dark='hard'
-"colorscheme gruvbox
-"" No background color (terminal default color)
-"hi Normal ctermbg=NONE
-"hi Visual ctermfg=gray
-"hi ColorColumn ctermbg=gray
-""highlight LineNr ctermfg=Blue guifg=LightBlue
 
 if has('termguicolors')
     set termguicolors
