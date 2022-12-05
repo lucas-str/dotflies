@@ -81,7 +81,7 @@ PROMPT="${user} ${pwd}$ "
 
 # Rigth prompt
 setopt PROMPT_SUBST
-RPROMPT='%F{green}$(git branch --show-current 2>/dev/null)%f'
+RPROMPT='%F{green}$(git symbolic-ref -q --short HEAD 2>/dev/null || git describe --tags --exact-match 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)%f'
 
 ###############################################################################
 # Exports and aliases
