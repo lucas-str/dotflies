@@ -13,13 +13,18 @@ let g:ale_rust_cargo_use_clippy = 1
 let g:ale_fixers = {
 \    '*': ['trim_whitespace'],
 \    'go': ['gofmt', 'goimports'],
-\    'python': ['black'],
+\    'python': ['black', 'isort'],
+\    'groovy': ['npm-groovy-lint'],
 \}
+
+let g:ale_python_isort_options = '--profile black'
 
 let g:ale_linters_ignore = {
 \    'c': ['clangd'],
 \    'python': ['pyright'],
 \}
 
-nmap gd :ALEGoToDefinition<CR>
-nmap gD :ALEGoToTypeDefinition<CR>
+nmap gd <Plug>(ale_go_to_definition)
+nmap gD <Plug>(ale_go_to_type_definition)
+
+imap <C-Space> <Plug>(ale_complete)

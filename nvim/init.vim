@@ -58,6 +58,7 @@ set mouse=a     " Enable mouse usage (all modes)
 
 " Cursor position in status bar
 set ruler
+set statusline=%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Always allow the use of backspace in insert mode
 set backspace=indent,eol,start
@@ -103,6 +104,7 @@ endif
 autocmd FileType {python,rust} setlocal colorcolumn=100
 autocmd FileType {c,cpp} setlocal colorcolumn=80
 autocmd FileType {yaml,javascript,css,json} setlocal sw=2 ts=2
+autocmd FileType {markdown,vimwiki} setlocal colorcolumn=80 textwidth=79
 
 " Split to the right
 set splitright
