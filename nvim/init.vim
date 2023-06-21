@@ -10,7 +10,6 @@ endif
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " Misc
-Plug 'ajh17/VimCompletesMe'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -28,7 +27,6 @@ Plug 'tpope/vim-fugitive'
 " Languages
 Plug 'chrisbra/csv.vim'
 Plug 'rust-lang/rust.vim'
-Plug 'vim-scripts/indentpython.vim'
 Plug 'lervag/vimtex'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
