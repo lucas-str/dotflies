@@ -10,6 +10,7 @@ endif
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " Misc
+"Plug 'ajh17/VimCompletesMe'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -24,9 +25,11 @@ Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 " Languages
 Plug 'chrisbra/csv.vim'
 Plug 'rust-lang/rust.vim'
+"Plug 'vim-scripts/indentpython.vim'
 Plug 'lervag/vimtex'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
@@ -103,7 +106,7 @@ endif
 " Per file type preferences
 autocmd FileType {python,rust} setlocal colorcolumn=100
 autocmd FileType {c,cpp} setlocal colorcolumn=80
-autocmd FileType {yaml,javascript,css,json} setlocal sw=2 ts=2
+autocmd FileType {yaml,javascript,css,json,html} setlocal sw=2 ts=2
 autocmd FileType {markdown,vimwiki} setlocal colorcolumn=80 textwidth=79
 
 " Split to the right
