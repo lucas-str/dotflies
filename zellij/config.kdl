@@ -1,0 +1,53 @@
+keybinds {
+    normal {
+        unbind "Ctrl n"
+    }
+    tab {
+        bind "n" {
+            NewTab {
+                cwd "$HOME"
+            };
+            SwitchToMode "Normal";
+        }
+    }
+    tmux {
+        bind "c" {
+            NewTab {
+                cwd "$HOME"
+            };
+            SwitchToMode "Normal";
+        }
+    }
+}
+
+plugins {
+    compact-bar { path "compact-bar"; }
+}
+
+simplified_ui true
+pane_frames false
+
+themes {
+    gruvbox-material {
+        fg "#D4BE98"
+        bg "#504945"
+        red "#EA6962"
+        green "#A9B665"
+        yellow "#D8A657"
+        blue "#7DAEA3"
+        magenta "#D3869B"
+        orange "#E78A4E"
+        cyan "#89B482"
+        black "#141617"
+        white "#DDC7A1"
+    }
+}
+
+theme "gruvbox-material"
+default_layout "compact"
+
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}
