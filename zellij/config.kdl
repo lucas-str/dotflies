@@ -9,6 +9,7 @@ keybinds {
             };
             SwitchToMode "Normal";
         }
+        bind "Tab" { ToggleTab; SwitchToMode "Normal"; }
     }
     tmux {
         bind "c" {
@@ -45,6 +46,7 @@ themes {
 
 theme "gruvbox-material"
 default_layout "compact"
+mirror_session true
 
 ui {
     pane_frames {
