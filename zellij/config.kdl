@@ -1,6 +1,9 @@
 keybinds {
     normal {
+        // Unbind annoying keybinds for nvim usage
         unbind "Ctrl n"
+        unbind "Ctrl o"
+        unbind "Ctrl p"
     }
     tab {
         bind "n" {
