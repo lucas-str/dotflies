@@ -20,7 +20,7 @@ Plug 'vimwiki/vimwiki'
 " Dev
 Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
-Plug 'ludovicchabant/vim-gutentags'
+"Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -36,6 +36,7 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'mfukar/robotframework-vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'habamax/vim-godot'
 " Theme
 Plug 'sainnhe/gruvbox-material'
 call plug#end()

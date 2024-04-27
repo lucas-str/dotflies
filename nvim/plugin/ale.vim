@@ -24,6 +24,15 @@ let g:ale_linters_ignore = {
 \    'python': ['pyright'],
 \}
 
+" Godot
+let g:ale_completion_autoimport = 1
+call ale#linter#Define('gdscript', {
+\   'name': 'godot',
+\   'lsp': 'socket',
+\   'address': '127.0.0.1:6005',
+\   'project_root': 'project.godot',
+\})
+
 nmap gd <Plug>(ale_go_to_definition)
 nmap gD <Plug>(ale_go_to_type_definition)
 
