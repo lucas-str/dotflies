@@ -96,9 +96,13 @@ export PATH="${HOME}/bin:${HOME}/.local/bin:/usr/local/go/bin:${PATH}"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
-if type exa > /dev/null; then
+if type eza > /dev/null; then
+    alias ls="eza"
+    alias ll="eza -las modified"
+    alias tree="eza -T"
+elif type exa > /dev/null; then
     alias ls="exa"
     alias ll="exa -las modified"
     alias tree="exa -T"
