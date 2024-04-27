@@ -11,11 +11,11 @@ endif
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " Misc
 "Plug 'ajh17/VimCompletesMe'
-Plug 'jistr/vim-nerdtree-tabs'
+"Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 Plug 'vimwiki/vimwiki'
 " Dev
 Plug 'airblade/vim-gitgutter'
@@ -30,11 +30,11 @@ Plug 'tpope/vim-surround'
 Plug 'chrisbra/csv.vim'
 Plug 'rust-lang/rust.vim'
 "Plug 'vim-scripts/indentpython.vim'
-Plug 'lervag/vimtex'
-Plug 'pangloss/vim-javascript'
-Plug 'MaxMEllon/vim-jsx-pretty'
+"Plug 'lervag/vimtex'
+"Plug 'pangloss/vim-javascript'
+"Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'mfukar/robotframework-vim'
+"Plug 'mfukar/robotframework-vim'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'habamax/vim-godot'
 " Theme
