@@ -21,6 +21,13 @@ keybinds {
             };
             SwitchToMode "Normal";
         }
+        unbind "j"
+        unbind "k"
+        bind "l" { ToggleTab; SwitchToMode "Normal"; }
+        unbind "m"
+    }
+    shared_except "locked" {
+        unbind "Ctrl q";
     }
 }
 
