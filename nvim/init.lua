@@ -20,6 +20,9 @@ Plug('sainnhe/gruvbox-material')
 Plug('tpope/vim-fugitive')
 Plug('tpope/vim-surround')
 Plug('vimwiki/vimwiki')
+-- Language specific
+Plug('rust-lang/rust.vim')
+Plug 'habamax/vim-godot'
 vim.call('plug#end')
 
 if vim.fn.has('termguicolors') then
@@ -36,7 +39,7 @@ vim.opt.smartcase = true
 
 vim.opt.mouse = 'a'
 
-vim.opt.statusline = [[%<%f\ %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P]]
+vim.opt.statusline = [[%<%f %h%m%r%{FugitiveStatusline()}%=%-14.(%l,%c%V%) %P]]
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -59,6 +62,11 @@ vim.opt.splitright = true
 -- Navigate properly when lines are wrapped
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = {'markdown', 'vimwiki'},
+    command = 'setlocal colorcolumn=80 textwidth=79',
+})
 
 -- Jump to last cursor line
 vim.api.nvim_create_autocmd('BufReadPost', {
