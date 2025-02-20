@@ -1,4 +1,5 @@
 local plugpath = vim.fn.stdpath('data') .. '/site/autoload/plug.vim'
+local pluginstall = false
 if not vim.uv.fs_stat(plugpath) then
     local plugurl = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     local out = vim.fn.system({'curl', '-fLo', plugpath, '--create-dirs', plugurl})
@@ -6,6 +7,7 @@ if not vim.uv.fs_stat(plugpath) then
         error('Error getting plug.nvim:\n' .. out)
     end
     vim.opt.rtp:prepend(plugpath)
+    pluginstall = true
 end
 
 local Plug = vim.fn['plug#']
@@ -24,6 +26,10 @@ Plug('vimwiki/vimwiki')
 Plug('rust-lang/rust.vim')
 Plug 'habamax/vim-godot'
 vim.call('plug#end')
+
+if pluginstall then
+    vim.cmd('PlugInstall --sync')
+end
 
 if vim.fn.has('termguicolors') then
     vim.opt.termguicolors = true
@@ -58,6 +64,8 @@ vim.opt.clipboard = 'unnamed'
 vim.opt.wildmode = 'longest,list,full'
 
 vim.opt.splitright = true
+
+vim.opt.updatetime = 2000
 
 -- Navigate properly when lines are wrapped
 vim.keymap.set('n', 'j', 'gj')
