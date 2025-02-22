@@ -1,0 +1,35 @@
+local conform = require("conform")
+
+conform.setup({
+    formatters_by_ft = {
+        python = { "isort", "black" },
+        lua = { "stylua" },
+        groovy = { "npm-groovy-lint" },
+        ["*"] = { "trim_whitespace" },
+    },
+    format_on_save = function(bufnr)
+        -- Disable with a global or buffer-local variable
+        if vim.g.format_disable or vim.b[bufnr].format_disable then
+            return
+        end
+        return { timeout_ms = 4000, lsp_format = "fallback" }
+    end,
+})
+
+conform.formatters.isort = { prepend_args = { "--profile", "black" } }
+conform.formatters.stylua = { prepend_args = { "--indent-type", "Spaces" } }
+
+vim.api.nvim_create_user_command("FormatDisable", function(args)
+    if args.bang then
+        vim.b.format_disable = true
+    else
+        vim.g.format_disable = true
+    end
+end, { desc = "Disable autoformat-on-save", bang = true })
+vim.api.nvim_create_user_command("FormatEnable", function(args)
+    if args.bang then
+        vim.b.format_disable = false
+    else
+        vim.g.format_disable = false
+    end
+end, { desc = "Enable autoformat-on-save", bang = true })
