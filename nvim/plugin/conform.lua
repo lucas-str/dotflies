@@ -12,7 +12,7 @@ conform.setup({
         if vim.g.format_disable or vim.b[bufnr].format_disable then
             return
         end
-        return { timeout_ms = 4000, lsp_format = "fallback" }
+        return { timeout_ms = 2000, lsp_format = "fallback" }
     end,
 })
 
@@ -33,3 +33,7 @@ vim.api.nvim_create_user_command("FormatEnable", function(args)
         vim.g.format_disable = false
     end
 end, { desc = "Enable autoformat-on-save", bang = true })
+
+vim.api.nvim_create_user_command("Format", function(args)
+    conform.format({ async = true })
+end, { desc = "Format" })

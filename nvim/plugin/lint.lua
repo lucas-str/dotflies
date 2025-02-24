@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
         if vim.g.lint_disable or vim.b.lint_disable then
             return
         end
-        require("lint").try_lint()
+        lint.try_lint()
     end,
 })
 
@@ -28,3 +28,7 @@ vim.api.nvim_create_user_command("LintEnable", function(args)
         vim.g.lint_disable = false
     end
 end, { desc = "Enable lint", bang = true })
+
+vim.api.nvim_create_user_command("Lint", function(args)
+    lint.try_lint()
+end, { desc = "Lint" })
