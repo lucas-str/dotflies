@@ -1,8 +1,9 @@
 local lint = require("lint")
 
-lint.linters_by_ft = { python = { "pylint", "mypy" }, groovy = { "npm-groovy-lint" } }
+lint.linters_by_ft = {
+    python = { "pylint", "mypy" },
+}
 
-lint.linters["npm-groovy-lint"].args = { "--failon", "none", "--loglevel", "warning" }
 lint.linters.mypy.args = { "--ignore-missing-imports" }
 
 vim.api.nvim_create_autocmd({ "CursorHold" }, {

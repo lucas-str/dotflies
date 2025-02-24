@@ -4,7 +4,6 @@ conform.setup({
     formatters_by_ft = {
         python = { "isort", "black" },
         lua = { "stylua" },
-        groovy = { "npm-groovy-lint" },
         ["*"] = { "trim_whitespace" },
     },
     format_on_save = function(bufnr)
