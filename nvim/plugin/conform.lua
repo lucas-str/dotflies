@@ -15,7 +15,6 @@ conform.setup({
     end,
 })
 
-conform.formatters.isort = { prepend_args = { "--profile", "black" } }
 conform.formatters.stylua = { prepend_args = { "--indent-type", "Spaces" } }
 
 vim.api.nvim_create_user_command("FormatDisable", function(args)

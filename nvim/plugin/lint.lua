@@ -1,7 +1,7 @@
 local lint = require("lint")
 
 lint.linters_by_ft = {
-    python = { "ruff" },
+    python = { "ruff", "mypy" },
 }
 
 lint.linters.mypy.args = { "--ignore-missing-imports" }
