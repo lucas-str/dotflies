@@ -24,3 +24,7 @@ lspconfig.lua_ls.setup({
 
 -- GDScript
 lspconfig.gdscript.setup({ capabilities = capabilities })
+
+vim.api.nvim_create_user_command("LspRename", function()
+    vim.lsp.buf.rename()
+end, { desc = "Rename with LSP" })
