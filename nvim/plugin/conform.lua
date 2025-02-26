@@ -2,7 +2,7 @@ local conform = require("conform")
 
 conform.setup({
     formatters_by_ft = {
-        python = { "isort", "black" },
+        python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
         lua = { "stylua" },
         ["*"] = { "trim_whitespace" },
     },
