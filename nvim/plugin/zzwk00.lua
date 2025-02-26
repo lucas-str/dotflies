@@ -22,6 +22,8 @@ parser_config.groovy = {
 
 -- Conform
 local conform = require("conform")
+conform.formatters_by_ft.python = { "isort", "black" }
+conform.formatters.isort = { prepend_args = { "--profile", "black" } }
 conform.formatters_by_ft.groovy = { "npm-groovy-lint" }
 -- conform.formatters["npm-groovy-lint"] = { prepend_args = { "--failon", "none" } }
 -- conform.formatters["npm-groovy-lint"] = {
@@ -32,6 +34,7 @@ conform.formatters_by_ft.groovy = { "npm-groovy-lint" }
 
 -- Lint
 local lint = require("lint")
+lint.linters_by_ft.python = { "pylint", "mypy" }
 lint.linters_by_ft.groovy = { "npm-groovy-lint" }
 lint.linters["npm-groovy-lint"].args = { "--failon", "none", "--loglevel", "warning" }
 
