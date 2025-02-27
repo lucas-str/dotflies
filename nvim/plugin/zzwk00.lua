@@ -26,11 +26,13 @@ conform.formatters_by_ft.python = { "isort", "black" }
 conform.formatters.isort = { prepend_args = { "--profile", "black" } }
 conform.formatters_by_ft.groovy = { "npm-groovy-lint" }
 -- conform.formatters["npm-groovy-lint"] = { prepend_args = { "--failon", "none" } }
--- conform.formatters["npm-groovy-lint"] = {
---     inherit = false,
---     command = "npm-groovy-lint",
---     args = { "--failon", "none", "--fix", "-" },
--- }
+conform.formatters["npm-groovy-lint"] = {
+    inherit = false,
+    command = "npm-groovy-lint",
+    -- args = { "--failon", "none", "--fix", "-" },
+    args = { "--failon", "none", "--format", "$FILENAME" },
+    stdin = false,
+}
 
 -- Lint
 local lint = require("lint")
