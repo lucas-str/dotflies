@@ -1,5 +1,5 @@
 local function get_day_fr(dt)
-    local days = { "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi" }
+    local days = { "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "samedi" }
     return days[dt.wday]
 end
 
