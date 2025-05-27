@@ -25,6 +25,9 @@ lspconfig.lua_ls.setup({
 -- GDScript
 lspconfig.gdscript.setup({ capabilities = capabilities })
 
+-- Rust
+lspconfig.rust_analyzer.setup({ settings = { ["rust-analyzer"] = {} } })
+
 vim.api.nvim_create_user_command("LspRename", function()
     vim.lsp.buf.rename()
 end, { desc = "Rename with LSP" })

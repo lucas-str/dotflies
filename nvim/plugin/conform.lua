@@ -4,6 +4,7 @@ conform.setup({
     formatters_by_ft = {
         python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
         lua = { "stylua" },
+        rust = { "rustfmt" },
         ["*"] = { "trim_whitespace" },
     },
     format_on_save = function(bufnr)
