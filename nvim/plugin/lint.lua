@@ -2,6 +2,7 @@ local lint = require("lint")
 
 lint.linters_by_ft = {
     python = { "ruff", "mypy" },
+    rust = { "clippy" },
 }
 
 lint.linters.mypy.args = { "--ignore-missing-imports" }
