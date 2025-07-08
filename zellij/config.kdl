@@ -25,6 +25,12 @@ keybinds {
         unbind "k"
         bind "l" { ToggleTab; SwitchToMode "Normal"; }
         unbind "m"
+        bind "b" {
+            LaunchOrFocusPlugin "file:~/.local/share/zellij/plugins/zfz.wasm" {
+                floating true
+            };
+            SwitchToMode "Normal";
+        }
     }
     shared_except "locked" {
         unbind "Ctrl q";
