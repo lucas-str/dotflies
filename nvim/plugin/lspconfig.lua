@@ -1,12 +1,10 @@
-local lspconfig = require("lspconfig")
-
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Python
-lspconfig.pyright.setup({ capabilities = capabilities })
+vim.lsp.config("pyright", { capabilities = capabilities })
 
 -- Lua
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
             diagnostics = {
@@ -23,10 +21,11 @@ lspconfig.lua_ls.setup({
 })
 
 -- GDScript
-lspconfig.gdscript.setup({ capabilities = capabilities })
+vim.lsp.config("gdscript", { capabilities = capabilities })
 
 -- Rust
-lspconfig.rust_analyzer.setup({ settings = { ["rust-analyzer"] = {} } })
+--vim.lsp.config("rust_analyzer", { settings = { ["rust-analyzer"] = {} } })
+vim.lsp.enable("rust_analyzer")
 
 vim.api.nvim_create_user_command("LspRename", function()
     vim.lsp.buf.rename()
