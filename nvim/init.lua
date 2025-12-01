@@ -40,6 +40,7 @@ Plug("tpope/vim-surround")
 Plug("vimwiki/vimwiki")
 -- Theme
 Plug("sainnhe/gruvbox-material")
+Plug("MeanderingProgrammer/render-markdown.nvim")
 vim.call("plug#end")
 
 if pluginstall then
