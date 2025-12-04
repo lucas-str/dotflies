@@ -19,6 +19,7 @@ Plug("L3MON4D3/LuaSnip", { tag = "v2.*", ["do"] = "make install_jsregexp" })
 -- Completion
 Plug("hrsh7th/nvim-cmp")
 Plug("hrsh7th/cmp-nvim-lsp")
+Plug("hrsh7th/cmp-buffer")
 Plug("saadparwaiz1/cmp_luasnip")
 -- Lint
 Plug("mfussenegger/nvim-lint")
