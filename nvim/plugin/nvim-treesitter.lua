@@ -1,7 +1,9 @@
-require("nvim-treesitter").install({ "c", "python", "rust" })
+local filetypes = { "c", "python", "rust" }
+
+require("nvim-treesitter").install(filetypes)
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "c", "python", "rust" },
+    pattern = filetypes,
     callback = function()
         -- syntax highlighting, provided by Neovim
         vim.treesitter.start()
