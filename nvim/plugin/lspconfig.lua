@@ -29,7 +29,7 @@ vim.lsp.config("gdscript", { capabilities = capabilities })
 -- Rust
 --vim.lsp.config("rust_analyzer", { settings = { ["rust-analyzer"] = {} } })
 vim.lsp.enable("rust_analyzer")
-vim.lsp.enable("rust_analyzer")
+--vim.lsp.config("rust_analyzer", { capabilities = capabilities })
 
 vim.api.nvim_create_user_command("LspRename", function()
     vim.lsp.buf.rename()

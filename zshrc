@@ -122,3 +122,7 @@ if [ -d "$HOME/.pyenv" ]; then
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
+
+if type zellij > /dev/null; then
+    eval "$(zellij setup --generate-completion zsh | sed -Ee 's/^(_(zellij) ).*/compdef \1\2/')"
+fi

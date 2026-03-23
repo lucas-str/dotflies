@@ -1,4 +1,10 @@
-local filetypes = { "c", "python", "rust" }
+local filetypes = {
+    "c",
+    "gitcommit",
+    "lua",
+    "python",
+    "rust",
+}
 
 require("nvim-treesitter").install(filetypes)
 

@@ -33,6 +33,13 @@ keybinds {
             };
             SwitchToMode "Normal";
         }
+        bind "Ctrl x" { CloseTab; SwitchToMode "Normal"; }
+        bind "Ctrl c" {
+            NewTab {
+                layout "dev";
+            };
+            SwitchToMode "Normal";
+        }
     }
     shared_except "locked" {
         unbind "Ctrl q";
