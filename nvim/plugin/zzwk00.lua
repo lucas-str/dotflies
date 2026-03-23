@@ -20,20 +20,27 @@ end, { desc = "Insert date to current line" })
 --    },
 --    -- filetype = "groovy", -- if filetype does not match the parser name
 --}
--- After main branch (not working):
---vim.api.nvim_create_autocmd("User", {
---    pattern = "TSUpdate",
+-- New configuration (main branch):
+--vim.api.nvim_create_autocmd("FileType", {
+--    pattern = { "groovy" },
 --    callback = function()
---        require("nvim-treesitter.parsers").groovy = {
---            install_info = {
---                path = "https://github.com/zimbulang/tree-sitter-zimbu",
---                files = { "src/parser.c" }, -- note that some parsers also require src/scanner.c or src/scanner.cc
---                -- optional entries:
---                queries = "queries/neovim", -- also install queries from given directory
---            },
---        }
+--        -- syntax highlighting, provided by Neovim
+--        vim.treesitter.start()
+--        -- indentation, provided by nvim-treesitter
+--        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 --    end,
 --})
+-- Use local repo: edit `grammar.js` and run `tree-sitter generate`
+vim.api.nvim_create_autocmd("User", {
+    pattern = "TSUpdate",
+    callback = function()
+        require("nvim-treesitter.parsers").groovy = {
+            install_info = {
+                path = "~/Workspace/External/tree-sitter-groovy",
+            },
+        }
+    end,
+})
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "groovy" },
     callback = function()
@@ -56,12 +63,14 @@ conform.formatters["npm-groovy-lint"] = {
     args = { "--failon", "none", "--format", "$FILENAME" },
     stdin = false,
 }
+conform.formatters_by_ft.kotlin = { "ktlint" }
 
 -- Lint
 local lint = require("lint")
 lint.linters_by_ft.python = { "pylint", "mypy" }
 lint.linters_by_ft.groovy = { "npm-groovy-lint" }
 lint.linters["npm-groovy-lint"].args = { "--failon", "none", "--loglevel", "warning" }
+lint.linters_by_ft.kotlin = { "ktlint" }
 
 -- lspconfig
 -- https://github.com/GroovyLanguageServer/groovy-language-server
