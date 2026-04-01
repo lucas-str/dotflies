@@ -16,6 +16,7 @@ vim.call("plug#begin")
 Plug("neovim/nvim-lspconfig")
 -- Snippets
 Plug("L3MON4D3/LuaSnip", { tag = "v2.*", ["do"] = "make install_jsregexp" })
+Plug("rafamadriz/friendly-snippets")
 -- Completion
 Plug("hrsh7th/nvim-cmp")
 Plug("hrsh7th/cmp-nvim-lsp")
