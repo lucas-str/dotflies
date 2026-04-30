@@ -1,0 +1,6 @@
+[credential]
+    helper = cache
+[rebase]
+    stat = true
+[tag]
+    sort = -committerdate
