@@ -28,6 +28,8 @@ Plug("mfussenegger/nvim-lint")
 Plug("stevearc/conform.nvim")
 -- Highlight
 Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" })
+-- Tooling
+Plug("mason-org/mason.nvim")
 -- Other
 Plug("airblade/vim-gitgutter")
 Plug("jiangmiao/auto-pairs")
