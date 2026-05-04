@@ -69,7 +69,8 @@ conform.formatters_by_ft.kotlin = { "ktlint" }
 local lint = require("lint")
 lint.linters_by_ft.python = { "pylint", "mypy" }
 lint.linters_by_ft.groovy = { "npm-groovy-lint" }
-lint.linters["npm-groovy-lint"].args = { "--failon", "none", "--loglevel", "warning" }
+lint.linters["npm-groovy-lint"].args =
+    { "--failon", "none", "--loglevel", "warning", "-c", "recommended", "-o", "json", "-" }
 lint.linters_by_ft.kotlin = { "ktlint" }
 
 -- lspconfig
