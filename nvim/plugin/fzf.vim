@@ -10,3 +10,5 @@ let g:fzf_action = {
 if executable('rg')
     let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!{.git,tmpenv}/*" --glob "!tags" 2>/dev/null'
 endif
+" Use nvim window and not Zellij/Tmux popup.
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
