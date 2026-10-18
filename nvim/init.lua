@@ -12,6 +12,10 @@ end
 
 local Plug = vim.fn["plug#"]
 vim.call("plug#begin")
+-- QoL
+Plug("folke/snacks.nvim")
+-- Vibe
+Plug("nickjvandyke/opencode.nvim")
 -- LSP
 Plug("neovim/nvim-lspconfig")
 -- Snippets
