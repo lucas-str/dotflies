@@ -1,0 +1,35 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permissions": [
+    { "action": "*", "resource": "*", "effect": "ask" },
+
+    { "action": "read", "resource": "*", "effect": "allow" },
+    { "action": "read", "resource": "*.env*", "effect": "deny" },
+
+    { "action": "shell", "resource": "*", "effect": "ask" },
+    { "action": "shell", "resource": "git *", "effect": "allow" },
+    { "action": "shell", "resource": "ls *", "effect": "allow" },
+    { "action": "shell", "resource": "cd *", "effect": "allow" },
+    { "action": "shell", "resource": "cat *", "effect": "allow" },
+    { "action": "shell", "resource": "echo *", "effect": "allow" },
+    { "action": "shell", "resource": "grep *", "effect": "allow" },
+    { "action": "shell", "resource": "find *", "effect": "allow" },
+    { "action": "shell", "resource": "pwd", "effect": "allow" },
+    { "action": "shell", "resource": "which *", "effect": "allow" },
+    { "action": "shell", "resource": "git push *", "effect": "deny" },
+
+    { "action": "webfetch", "resource": "*", "effect": "ask" },
+    { "action": "webfetch", "resource": "https://raw.githubusercontent.com/*", "effect": "allow" },
+    { "action": "webfetch", "resource": "https://docs.rs/*", "effect": "allow" },
+    { "action": "webfetch", "resource": "https://*.readthedocs.io/*", "effect": "allow" },
+  ],
+  "websearch": false,
+  "mcp": {
+      "servers": {
+          "duckduckgo": {
+              "type": "local",
+              "command": ["uvx", "duckduckgo-mcp-server"]
+          }
+      }
+  },
+}
