@@ -66,13 +66,14 @@ lint.linters["npm-groovy-lint"].args = { "--failon", "none", "--loglevel", "warn
 -- lspconfig
 -- https://github.com/GroovyLanguageServer/groovy-language-server
 vim.lsp.enable("groovyls")
-vim.lsp.config("groovyls", {
-    cmd = {
-        "java",
-        "-jar",
-        "/home/lsturelle/Workspace/External/groovy-language-server/build/libs/groovy-language-server-all.jar",
-    },
-})
+--vim.lsp.config("groovyls", {
+--    cmd = {
+--        "java",
+--        "-jar",
+--        "/home/lsturelle/Workspace/External/groovy-language-server/build/libs/groovy-language-server-all.jar",
+--    },
+--})
+--vim.lsp.enable("kotlin_lsp")
 
 -- ALE
 -- fixers
