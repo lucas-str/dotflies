@@ -7,14 +7,17 @@
     { "action": "read", "resource": "*.env*", "effect": "deny" },
 
     { "action": "shell", "resource": "*", "effect": "ask" },
-    { "action": "shell", "resource": "git *", "effect": "allow" },
-    { "action": "shell", "resource": "ls *", "effect": "allow" },
-    { "action": "shell", "resource": "cd *", "effect": "allow" },
     { "action": "shell", "resource": "cat *", "effect": "allow" },
+    { "action": "shell", "resource": "cd *", "effect": "allow" },
     { "action": "shell", "resource": "echo *", "effect": "allow" },
-    { "action": "shell", "resource": "grep *", "effect": "allow" },
     { "action": "shell", "resource": "find *", "effect": "allow" },
+    { "action": "shell", "resource": "git *", "effect": "allow" },
+    { "action": "shell", "resource": "grep *", "effect": "allow" },
+    { "action": "shell", "resource": "head *", "effect": "allow" },
+    { "action": "shell", "resource": "jq *", "effect": "allow" },
+    { "action": "shell", "resource": "ls *", "effect": "allow" },
     { "action": "shell", "resource": "pwd", "effect": "allow" },
+    { "action": "shell", "resource": "wc *", "effect": "allow" },
     { "action": "shell", "resource": "which *", "effect": "allow" },
     { "action": "shell", "resource": "git push *", "effect": "deny" },
 
@@ -24,6 +27,7 @@
     { "action": "webfetch", "resource": "https://*.readthedocs.io/*", "effect": "allow" },
 
     { "action": "glob", "resource": "*", "effect": "allow" },
+    { "action": "grep", "resource": "*", "effect": "allow" },
   ],
   "websearch": false,
   "enabled_providers": ["mistral", "ollama"],
@@ -32,7 +36,7 @@
           "duckduckgo": {
               "type": "local",
               "command": ["uvx", "duckduckgo-mcp-server"]
-          }
+          },
       }
   },
 }
