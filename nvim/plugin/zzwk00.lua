@@ -7,33 +7,18 @@ vim.api.nvim_create_user_command("Date", function()
 end, { desc = "Insert date to current line" })
 
 -- nvim-treesitter
--- Old configuration (master branch):
---local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
---parser_config.groovy = {
---    install_info = {
---        url = "~/Workspace/External/tree-sitter-groovy", -- local path or git repo
---        files = { "src/parser.c" }, -- note that some parsers also require src/scanner.c or src/scanner.cc
---        -- optional entries:
---        branch = "hotfix/disable-groovy-doc", -- default branch in case of git repo if different from master
---        -- generate_requires_npm = false, -- if stand-alone parser without npm dependencies
---        -- requires_generate_from_grammar = false, -- if folder contains pre-generated src/parser.c
---    },
---    -- filetype = "groovy", -- if filetype does not match the parser name
---}
--- After main branch (not working):
---vim.api.nvim_create_autocmd("User", {
---    pattern = "TSUpdate",
---    callback = function()
---        require("nvim-treesitter.parsers").groovy = {
---            install_info = {
---                path = "https://github.com/zimbulang/tree-sitter-zimbu",
---                files = { "src/parser.c" }, -- note that some parsers also require src/scanner.c or src/scanner.cc
---                -- optional entries:
---                queries = "queries/neovim", -- also install queries from given directory
---            },
---        }
---    end,
---})
+vim.api.nvim_create_autocmd("User", {
+    pattern = "TSUpdate",
+    callback = function()
+        ---@diagnostic disable: missing-fields
+        require("nvim-treesitter.parsers").groovy.install_info = {
+            url = "https://github.com/lucas-str/tree-sitter-groovy",
+            branch = "fix-groovy_doc",
+        }
+        ---@diagnostic enable: missing-fields
+    end,
+})
+require("nvim-treesitter").install({ "groovy" })
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "groovy" },
     callback = function()
