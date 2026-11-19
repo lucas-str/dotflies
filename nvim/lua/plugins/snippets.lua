@@ -1,7 +1,7 @@
 return {
     {
         "L3MON4D3/LuaSnip",
-        tag = "v2.*",
+        version = "v2.*",
         build = "make install_jsregexp",
         config = function()
             -- Configure friendly-snippets
