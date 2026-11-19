@@ -1,10 +1,10 @@
 local function get_day_fr(dt)
-    local days = { "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "samedi" }
+    local days = { "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi" }
     return days[dt.wday]
 end
 
 local function get_month_fr(dt)
-    local days = {
+    local months = {
         "Janvier",
         "Février",
         "Mars",
@@ -18,7 +18,7 @@ local function get_month_fr(dt)
         "Novembre",
         "Décembre",
     }
-    return days[dt.month]
+    return months[dt.month]
 end
 
 vim.api.nvim_create_user_command("Date", function()

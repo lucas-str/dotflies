@@ -3,6 +3,11 @@ vim.api.nvim_create_autocmd("FileType", {
     command = "setlocal colorcolumn=80 textwidth=79",
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "vimwiki",
+    command = "setlocal formatoptions+=t",
+})
+
 -- Jump to last cursor line
 vim.api.nvim_create_autocmd("BufReadPost", {
     pattern = "*",
