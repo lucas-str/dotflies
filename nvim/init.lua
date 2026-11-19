@@ -1,6 +1,4 @@
--- Bootstrap lazy.nvim: it is cloned automatically on the first run, and then
--- installs every plugin declared in lua/plugins/ during this same startup --
--- no manual step, no relaunch needed.
+-- lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
     vim.fn.system({
@@ -21,9 +19,15 @@ require("core.autocmds")
 require("utils")
 
 -- Plugins: every file in lua/plugins/ returns a lazy.nvim spec (or a list of
--- specs). Installed plugins are pinned in lazy-lock.json (commit it).
+-- specs). Installed plugins are pinned in lazy-lock.json.
 require("lazy").setup({
     spec = { { import = "plugins" } },
     change_detection = { notify = false },
     checker = { enabled = false },
 })
+
+-- Loaded only when the file exists.
+local profile = vim.fn.stdpath("config") .. "/lua/wk00.lua"
+if vim.uv.fs_stat(profile) then
+    require("wk00")
+end
