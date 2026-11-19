@@ -38,7 +38,7 @@ return {
             end
         end, { desc = "Enable autoformat-on-save", bang = true })
 
-        vim.api.nvim_create_user_command("Format", function(args)
+        vim.api.nvim_create_user_command("Format", function()
             conform.format({ async = true })
         end, { desc = "Format" })
     end,

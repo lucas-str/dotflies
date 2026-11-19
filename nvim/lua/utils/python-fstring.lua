@@ -3,7 +3,7 @@ vim.api.nvim_create_augroup("py-fstring", { clear = true })
 vim.api.nvim_create_autocmd("InsertCharPre", {
     pattern = { "*.py" },
     group = "py-fstring",
-    --- @param opts AutoCmdCallbackOpts
+    --- @param opts vim.api.keyset.create_autocmd.callback_args
     --- @return nil
     callback = function(opts)
         -- Only run if f-string escape character is typed
