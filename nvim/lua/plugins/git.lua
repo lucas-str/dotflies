@@ -6,6 +6,7 @@ return {
         keys = {
             { "<leader>gp", ":GitGutterPreviewHunk<CR>", desc = "Preview git hunk" },
         },
+        cmd = { "GitGutterToggle" },
         init = function()
             -- Disable GitGutter by default
             vim.g.gitgutter_enabled = 0

@@ -1,6 +1,7 @@
 return {
     "vimwiki/vimwiki",
     ft = { "vimwiki", "markdown" },
+    cmd = { "VimwikiMakeDiaryNote" },
     init = function()
         vim.g.vimwiki_list = {
             { path = "~/.vimwiki/" },
