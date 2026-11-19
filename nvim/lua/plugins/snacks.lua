@@ -26,55 +26,14 @@ return {
             },
         },
     },
+    -- stylua: ignore
     keys = {
-        {
-            "<leader>ff",
-            function()
-                Snacks.picker.files()
-            end,
-            desc = "Find files",
-        },
-        {
-            "<leader>fb",
-            function()
-                Snacks.picker.buffers({ current = false })
-            end,
-            desc = "Buffers",
-        },
-        {
-            "<leader>fg",
-            function()
-                Snacks.picker.grep()
-            end,
-            desc = "Grep",
-        },
-        {
-            "<leader>fl",
-            function()
-                Snacks.picker.lines()
-            end,
-            desc = "Buffer Lines",
-        },
-        {
-            "<leader>f:",
-            function()
-                Snacks.picker.command_history()
-            end,
-            desc = "Command History",
-        },
-        {
-            "<leader>fd",
-            function()
-                Snacks.picker.diagnostics()
-            end,
-            desc = "Diagnostics",
-        },
-        {
-            "<leader>fD",
-            function()
-                Snacks.picker.diagnostics_buffer()
-            end,
-            desc = "Buffer Diagnostics",
-        },
+        { "<leader>f:", function() Snacks.picker.command_history() end, desc = "Command History" },
+        { "<leader>fD", function() Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
+        { "<leader>fb", function() Snacks.picker.buffers({ current = false }) end, desc = "Buffers" },
+        { "<leader>fd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+        { "<leader>ff", function() Snacks.picker.files() end, desc = "Find files" },
+        { "<leader>fg", function() Snacks.picker.grep() end, desc = "Grep" },
+        { "<leader>fl", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
     },
 }
