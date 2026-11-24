@@ -14,11 +14,11 @@ if [[ -f /usr/share/bash-completion/bash_completion ]]; then
     source /usr/share/bash-completion/bash_completion
 fi
 
-if type direnv > /dev/null; then
+if type direnv > /dev/null 2>&1; then
     eval "$(direnv hook bash)"
 fi
 
-if type zellij > /dev/null; then
+if type zellij > /dev/null; 2>&1 then
     eval "$(zellij setup --generate-completion bash)"
 fi
 
