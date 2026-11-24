@@ -1,0 +1,55 @@
+# Readline configuration (read by bash, psql, sqlite3, python, gdb, ...).
+# Kept in the dotfiles repo, deployed as ~/.inputrc.
+
+# Distro defaults first. Once a user inputrc exists, readline stops reading
+# /etc/inputrc on its own.
+$include /etc/inputrc
+
+# Case insensitive completion, matching zsh's matcher-list.
+# readline has no substring matching, so 'r:|=*' cannot be reproduced.
+set completion-ignore-case on
+set completion-map-case on
+
+# Arrow up/down: history prefix search, like zsh's up-line-or-beginning-search.
+# Bind both escape variants in each editing mode's keymap.
+
+set keymap emacs-standard
+"\e[A": history-search-backward
+"\eOA": history-search-backward
+"\e[B": history-search-forward
+"\eOB": history-search-forward
+
+set keymap vi-insert
+"\e[A": history-search-backward
+"\eOA": history-search-backward
+"\e[B": history-search-forward
+"\eOB": history-search-forward
+
+set keymap vi-command
+"\e[A": history-search-backward
+"\eOA": history-search-backward
+"\e[B": history-search-forward
+"\eOB": history-search-forward
+
+# PageUp/PageDown through the full history, like the zshrc kpp/knp bindings.
+set keymap emacs-standard
+"\e[5~": beginning-of-history
+"\e[6~": end-of-history
+
+set keymap vi-insert
+"\e[5~": beginning-of-history
+"\e[6~": end-of-history
+
+set keymap vi-command
+"\e[5~": beginning-of-history
+"\e[6~": end-of-history
+
+# Insert toggles overwrite mode (zsh kich1).
+set keymap emacs-standard
+"\e[2~": overwrite-mode
+
+set keymap vi-insert
+"\e[2~": overwrite-mode
+
+# Home/End/Backspace/Delete are correct readline defaults in every keymap.
+set keymap emacs-standard

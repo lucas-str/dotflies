@@ -1,0 +1,22 @@
+# Aliases shared between zshrc and bashrc.
+
+if type eza > /dev/null; then
+    alias ls="eza"
+    alias ll="eza -las modified"
+    alias tree="eza -T"
+elif type exa > /dev/null; then
+    alias ls="exa"
+    alias ll="exa -las modified"
+    alias tree="exa -T"
+else
+    alias ls="ls --color=auto"
+    alias ll="ls -lArth"
+fi
+
+if type fdfind > /dev/null; then
+    alias fd="fdfind"
+fi
+
+alias tmux="tmux -2"
+
+alias grep="grep --color=auto"

@@ -72,22 +72,8 @@ export PATH="${HOME}/bin:${HOME}/.local/bin:/usr/local/go/bin:${PATH}"
 
 export EDITOR='nvim'
 
-if type eza > /dev/null; then
-    alias ls="eza"
-    alias ll="eza -las modified"
-    alias tree="eza -T"
-elif type exa > /dev/null; then
-    alias ls="exa"
-    alias ll="exa -las modified"
-    alias tree="exa -T"
-else
-    alias ls="ls --color=auto"
-    alias ll="ls -lArth"
-fi
-
-alias tmux="tmux -2"
-
-alias grep="grep --color=auto"
+# Aliases shared between zsh and bash, kept next to this file
+source "$(dirname "$(readlink -f ~/.zshrc)")/aliases"
 
 # pyenv
 if [ -d "$HOME/.pyenv" ]; then
@@ -100,3 +86,6 @@ fi
 if type zellij > /dev/null; then
     eval "$(zellij setup --generate-completion zsh | sed -Ee 's/^(_(zellij) ).*/compdef \1\2/')"
 fi
+
+# opencode
+export PATH=/home/lucas/.opencode/bin:$PATH
