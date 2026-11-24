@@ -1,10 +1,10 @@
 # Aliases shared between zshrc and bashrc.
 
-if type eza > /dev/null; then
+if type eza > /dev/null 2>&1; then
     alias ls="eza"
     alias ll="eza -las modified"
     alias tree="eza -T"
-elif type exa > /dev/null; then
+elif type exa > /dev/null 2>&1; then
     alias ls="exa"
     alias ll="exa -las modified"
     alias tree="exa -T"
@@ -13,7 +13,7 @@ else
     alias ll="ls -lArth"
 fi
 
-if type fdfind > /dev/null; then
+if type fdfind > /dev/null 2>&1; then
     alias fd="fdfind"
 fi
 
