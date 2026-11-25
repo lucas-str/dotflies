@@ -4,7 +4,7 @@ HISTSIZE=10000
 HISTFILESIZE=20000
 shopt -s histappend
 
-# Prompt: magenta user@host, blue path, green git branch.
+# Prompt: green user@host, blue path, green git branch.
 # git branch is computed in the prompt function below.
 # Vi editing mode.
 set -o vi
@@ -41,7 +41,7 @@ __set_prompt() {
         || git describe --tags --exact-match 2>/dev/null \
         || git rev-parse --short HEAD 2>/dev/null)
 
-    PS1='\[\e[35m\]\u@\h\[\e[0m\] \[\e[34m\]\w\[\e[0m\]'
+    PS1='\[\e[32m\]\u@\h\[\e[0m\] \[\e[34m\]\w\[\e[0m\]'
     if [[ -n $branch ]]; then
         PS1+=' (\[\e[32m\]'"$branch"'\[\e[0m\])'
     fi
